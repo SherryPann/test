@@ -25,6 +25,6 @@ MultSelection.prototype.MatchAnswer = function(standardA) {
   if (answer.length !== len || len === 0) {
     return 0;
   } else {
-    return answer.length === standardA.value.length ? 2 : 1;
+    return answer.length === standardA.value.length ? standardA.score : standardA.score / 2;
   }
 }

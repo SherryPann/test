@@ -25,7 +25,7 @@ describe('TotalScore', function() {
     var totalScore = new TotalScore();
     var score = totalScore.getTotalScore(form);
     it("should return correct total score", function() {
-      expect(score).toBe();
+      expect(score).toBe(12);
     });
 
   });
