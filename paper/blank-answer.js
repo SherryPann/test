@@ -4,32 +4,20 @@ function BlankAnswer(type, name, value) {
   this.value = value;
 }
 
-function loadStandardAnswer() {
-  return [{
-    type: 'text',
-    name: 'blank-1',
-    value: ['统一建模语言'],
-    score: 1
-  }, {
-    type: 'text',
-    name: 'blank-2',
-    value: ['封装性', '继承性', '多态性'],
-    score: 3
-  }, ];
-}
-
-
-
 BlankAnswer.prototype.getScore = function() {
   var StandardAnswer = loadStandardAnswer();
-  var _this = this;
+  var score = 0;
   var length = StandardAnswer.length;
   for (var i = 0; i < length; i++) {
-    if (StandardAnswer[i].name === _this.name) {
-      var right = _this.value.filter(function(val) {
-        return (StandardAnswer[i].value.indexOf(val) !== -1);
-      });
-      return right.length * 1;
+    if (StandardAnswer[i].name === this.name) {
+      for (var j = 0; j < this.value.length; j++) {
+        var isRepeat = this.value.slice(j + 1, this.value.length).indexOf(this.value[j]) !== -1;
+        if ((StandardAnswer[i].value.indexOf(this.value[j]) !== -1) && !isRepeat) {
+          score += StandardAnswer[i].score / StandardAnswer[i].value.length;
+        }
+      }
+      return score;
     }
+
   }
 }

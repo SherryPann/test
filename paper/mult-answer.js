@@ -4,27 +4,27 @@ function MultSelection(type, name, value) {
   this.value = value;
 }
 
-function loadStandardAnswer() {
-  return [{
-    type: 'checkbox',
-    name: 'mult-selection-1',
-    value: ['A', 'B', 'D'],
-    score: 2
-  }, {
-    type: 'checkbox',
-    name: 'mult-selection-1',
-    value: ['A', 'B', 'C'],
-    score: 2
-  }];
-}
 
 MultSelection.prototype.getScore = function() {
   var standardAnswer = loadStandardAnswer();
-  var _this = this;
+  var score = 0;
   var length = standardAnswer.length;
   for (var i = 0; i < length; i++) {
-    if(_this.name === standardAnswer[i].name){
+    if (this.name === standardAnswer[i].name) {
+      score = this.MatchAnswer(standardAnswer[i]);
     }
   }
+  return score;
+}
 
+MultSelection.prototype.MatchAnswer = function(standardA) {
+  var len = this.value.length;
+  var answer = this.value.filter(function(val) {
+    return (standardA.value.indexOf(val) !== -1);
+  });
+  if (answer.length !== len || len === 0) {
+    return 0;
+  } else {
+    return answer.length === standardA.value.length ? 2 : 1;
+  }
 }

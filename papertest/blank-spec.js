@@ -1,15 +1,15 @@
-describe("BlankAnswer",function(){
-  var blankAnswer = new BlankAnswer('text','blank-1',['统一建模语言']);
+describe("BlankAnswer", function() {
+  var blankAnswer = new BlankAnswer('text', 'blank-2', ['封装性', '封装性', '封装性']);
   var score = 0;
-  beforeEach(function(){
-     score = blankAnswer.getScore();
+  beforeEach(function() {
+    score = blankAnswer.getScore();
   })
-  it("accept type,name and value as parameters",function(){
+  it("accept type,name and value as parameters", function() {
     expect(blankAnswer.type).toBe("text");
-    expect(blankAnswer.name).toBe("blank-1");
-    expect(blankAnswer.value).toEqual(['统一建模语言']);
+    expect(blankAnswer.name).toBe("blank-2");
+    expect(blankAnswer.value).toEqual(['封装性', '封装性', '封装性']);
   });
-  it("return the correct score",function(){
+  it("return the correct score", function() {
     expect(score).toBe(1);
   });
 });

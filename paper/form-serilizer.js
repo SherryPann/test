@@ -5,7 +5,7 @@ function getAnswer(elem, result) {
     if (result[i].name === elem.name) {
       result[i].value.push(elem.value);
       return;
-      }
+    }
 
   }
   result.push({
@@ -13,7 +13,6 @@ function getAnswer(elem, result) {
     name: elem.name,
     value: [elem.value]
   });
-
 }
 
 FormSerilizer.prototype.scan = function(form) {
