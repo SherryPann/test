@@ -1,5 +1,4 @@
-function BlankAnswer(type, name, value) {
-  this.type = type;
+function BlankAnswer( name, value) {
   this.name = name;
   this.value = value;
 }

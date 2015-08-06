@@ -1,5 +1,4 @@
-function MultSelection(type, name, value) {
-  this.type = type;
+function MultSelection( name, value) {
   this.name = name;
   this.value = value;
 }

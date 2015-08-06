@@ -1,5 +1,4 @@
-function SingleAnswer(type, name, value) {
-  this.type = type;
+function SingleAnswer( name, value) {
   this.name = name;
   this.value = value;
 }

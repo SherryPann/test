@@ -1,8 +1,6 @@
 function TotalScore() {}
-TotalScore.prototype.getTotalScore = function(form) {
+TotalScore.prototype.getTotalScore = function(AnswerArray) {
   var score = 0;
-  var _FormSerilizer = new FormSerilizer();
-  var AnswerArray = _FormSerilizer.scan(form);
   for (var i = 0; i < AnswerArray.length; i++) {
     if (AnswerArray[i].type === 'text') {
       score += this.getBlankScore(AnswerArray[i]);
@@ -16,14 +14,14 @@ TotalScore.prototype.getTotalScore = function(form) {
 }
 
 TotalScore.prototype.getBlankScore = function(answer) {
-  var blankAnswer = new BlankAnswer(answer.type, answer.name, answer.value);
+  var blankAnswer = new BlankAnswer(answer.name, answer.value);
   return blankAnswer.getScore();
 }
 TotalScore.prototype.getSingleScore = function(answer) {
-  var singleAnswer = new SingleAnswer(answer.type, answer.name, answer.value);
+  var singleAnswer = new SingleAnswer( answer.name, answer.value);
   return singleAnswer.getScore();
 }
 TotalScore.prototype.getMultScore = function(answer) {
-  var multSelection = new MultSelection(answer.type, answer.name, answer.value);
+  var multSelection = new MultSelection(answer.name, answer.value);
   return multSelection.getScore();
 }
