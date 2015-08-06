@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8">
   <title>西安软件服务外包学院</title>
-  <script src="test2-spec.js"></script>
 </head>
 
 <body>
@@ -91,12 +90,12 @@
             四 、判断题
             <br> 1. 用例图只是用于和客户交流和沟通的,用于确定需求。 【】 X
 
-            <input type="radio" name="judge-1" id="41X" /> V
-            <input type="radio" name="judge-1" id="41Y" />
+            <input type="radio" name="judge-1" value='X' /> V
+            <input type="radio" name="judge-1" value="V" />
             <br> 2. 在状态图中,终止状态在一个状态图中允许有任意多个。 【】 X
 
-            <input type="radio" name="judge-2" id="42X" /> V
-            <input type="radio" name="judge-2" id="42Y" />
+            <input type="radio" name="judge-2" value='X' /> V
+            <input type="radio" name="judge-2" value='V' />
             <br>
             <br>
           </div>
@@ -113,10 +112,19 @@
               <h2>
           </center>
           <div class="submit">
-            <input type="submit" value="提交" style="width:80px;height:40px;color=red;">
+            <input type="button" onclick="CalculateScore()" value="提交" style="width:80px;height:40px;color=red;">
           </div>
       </form>
     </div>
+    <script type="text/javascript" src="./paper/main.js"></script>
+    <script type="text/javascript" src="./paper/form-serilizer.js"></script>
+    <script type="text/javascript" src="./paper/load-standard-answer.js"></script>
+    <script type="text/javascript" src="./paper/blank-answer.js"></script>
+    <script type="text/javascript" src="./paper/mult-answer.js"></script>
+    <script type="text/javascript" src="./paper/single-answer.js"></script>
+    <script type="text/javascript" src="./paper/total-score.js"></script>
+
+
 
 </body>
 
