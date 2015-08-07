@@ -20,7 +20,7 @@ function loadStandardAnswer() {
       value: ['A', 'B', 'D'],
       score: 2
     }, {
-      name: 'mult-selection-1',
+      name: 'mult-selection-2',
       value: ['A', 'B', 'C'],
       score: 2
     }, {

@@ -18,7 +18,7 @@ function getAnswer(elem, result) {
 FormSerilizer.prototype.scan = function(form) {
   var result = [];
   [].forEach.call(form, function(elem) {
-    if (elem.type === 'text' || elem.checked) {
+    if ((elem.type === 'text' || elem.checked) && elem.name!=='') {
       getAnswer(elem, result);
     }
   });

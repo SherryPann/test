@@ -15,6 +15,7 @@ TotalScore.prototype.getTotalScore = function(AnswerArray) {
 
 TotalScore.prototype.getBlankScore = function(answer) {
   var blankAnswer = new BlankAnswer(answer.name, answer.value);
+  blankAnswer.getScore();
   return blankAnswer.getScore();
 }
 TotalScore.prototype.getSingleScore = function(answer) {

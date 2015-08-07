@@ -1,5 +1,6 @@
 describe('TotalScore', function() {
-  var AnswerArray = [{
+  var AnswerArray = [
+    {
       type: 'text',
       name: 'blank-1',
       value: ['统一建模语言']
@@ -28,7 +29,7 @@ describe('TotalScore', function() {
     var totalScore = new TotalScore();
     var score = totalScore.getTotalScore(AnswerArray);
     it("should return correct total score", function() {
-      expect(score).toBe(10);
+      expect(score).toBe(8);
     });
 
   });
